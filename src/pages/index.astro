@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="h-full w-full">
+		
+		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<p class="instructions">
+			To get started, open the directory <code>src/pages</code> in your project.<br />
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		</p>
+		<ul class="w-full grid grid-cols-4 gap-1 place-content-center">
+			<Card
+				pokemon_id={261}
+			/>
+			<Card
+				pokemon_id={43}
+			/>
+			<Card
+				pokemon_id={81}
+			/>
+			<Card
+				pokemon_id={3}
+			/>
+		</ul>
+	</main>
+</Layout>
+
