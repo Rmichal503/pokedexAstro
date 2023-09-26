@@ -5,12 +5,8 @@ import SearchComponent from '../components/ReactComponents/SearchComponent';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="h-full w-full">
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
+	<main class="h-full w-full flex flex-col justify-center items-center">
+		<h1 class="text-6xl font-bold">Welcome to <span class="text-pokemon-main-red">Pokedex</span></h1>
 		<SearchComponent client:load/>
 	</main>
 </Layout>
