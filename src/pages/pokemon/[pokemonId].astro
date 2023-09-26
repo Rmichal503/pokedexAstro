@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Pokemon } from "../../types/pokeApi";
+import { twMerge } from 'tailwind-merge'
+import { clsx } from 'clsx'
+import { firstLetterUpperCase } from "../../utils";
+export const prerender = false
+const {pokemonId} = Astro.params
+
+const res:Pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`).then((r)=>{
+	return r.json()
+})
+const className = res.types.map(type=>{
+    return clsx({
+        'bg-pokemon-type-grass':type.type.name==='grass',
+        'bg-pokemon-type-fire':type.type.name==='fire',
+        'bg-pokemon-type-water':type.type.name==='water',
+        'bg-pokemon-type-normal':type.type.name==='normal',
+        'bg-pokemon-type-flying':type.type.name==='flying',
+        'bg-pokemon-type-bug':type.type.name==='bug',
+        'bg-pokemon-type-poison':type.type.name==='poison',
+        'bg-pokemon-type-electric':type.type.name==='electric',
+        'bg-pokemon-type-ground':type.type.name==='ground',
+        'bg-pokemon-type-fighting':type.type.name==='fighting',
+        'bg-pokemon-type-psychic':type.type.name==='psychic',
+        'bg-pokemon-type-rock':type.type.name==='rock',
+        'bg-pokemon-type-ice':type.type.name==='ice',
+        'bg-pokemon-type-ghost':type.type.name==='ghost',
+        'bg-pokemon-type-dragon':type.type.name==='dragon',
+        'bg-pokemon-type-dark':type.type.name==='dark',
+        'bg-pokemon-type-steel':type.type.name==='steel',
+        'bg-pokemon-type-fairy':type.type.name==='fairy',
+    })
+})
+
+---
+<Layout title={res.name}>
+    <div class="flex flex-col font-mono border border-slate-300 bg-pokemon-main-gold rounded-md w-[300px] h-fit p-4 items-center justify-center space-y-2">
+        <p class="text-3xl">{firstLetterUpperCase(res.name)}</p>
+        <img class="bg-pokemon-main-screen rounded-md border border-slate-600" src={res.sprites.front_default} alt={res.name}>
+        <div class="flex space-x-1">
+            {res.types.map((type,index)=>{
+                const newClass = twMerge('px-1 rounded-md border border-slate-600 text-xs',className[index])
+                return <p class={newClass}>{type.type.name}</p>
+            })}
+        </div>
+        <table>
+            <tbody >
+                {res.stats.map(stat=>{return <tr><td>{firstLetterUpperCase(stat.stat.name)}</td><td class="text-right">{stat.base_stat}</td></tr>})}
+            </tbody>
+        </table>
+    </div>
+</Layout>
