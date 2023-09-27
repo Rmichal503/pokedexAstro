@@ -1,12 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import SearchComponent from '../components/ReactComponents/SearchComponent';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main class="h-full w-full flex flex-col justify-center items-center">
-		<h1 class="text-6xl font-bold">Welcome to <span class="text-pokemon-main-red">Pokedex</span></h1>
+		<h1 class="text-4xl md:text-6xl font-bold text-center font-pokemon mb-6">Welcome<br>to<br><span class="text-pokemon-main-red">Pokedex</span></h1>
 		<SearchComponent client:load/>
 	</main>
 </Layout>
