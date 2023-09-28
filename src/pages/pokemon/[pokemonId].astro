@@ -36,7 +36,7 @@ const className = res.types.map((type) => {
 });
 ---
 
-<Layout title={res.name}>
+<Layout title={firstLetterUpperCase(res.name)}>
     <a class="absolute flex space-x-1 top-4 left-4 md:text-lg 2xl:text-4xl border-2 border-slate-900 bg-pokemon-main-red rounded-md px-3 py-2" href="/"> <svg class="w-6 h-6 2xl:w-10 2xl:h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Back</a>
   <div transition:name="card"
     class="border-2 border-slate-900 bg-pokemon-main-red drop-shadow-md flex flex-col font-pokemon rounded-xl w-5/6 sm:w-[320px] md:w-1/2 xl:w-1/3 2xl:w-1/2 h-fit p-4 md:p-6 2xl:p-14 items-center justify-center space-y-2 2xl:space-y-8"
