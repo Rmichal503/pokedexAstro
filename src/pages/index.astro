@@ -5,8 +5,8 @@ import SearchComponent from '../components/ReactComponents/SearchComponent';
 
 <Layout title="Welcome to Astro.">
 	<main class="h-full w-full flex flex-col justify-center items-center">
-		<h1 class="text-4xl md:text-6xl font-bold text-center font-pokemon mb-6">Welcome<br>to<br><span class="text-pokemon-main-red">Pokedex</span></h1>
-		<SearchComponent client:load/>
+		<h1 class="text-4xl md:text-6xl xl:text-7xl 2xl:text-9xl font-bold text-center font-pokemon mb-6 md:mb-10 xl:mb-14">Welcome<br>to<br><span class="text-pokemon-main-red">Pokedex</span></h1>
+		<SearchComponent client:load transition:name='card'/>
 	</main>
 </Layout>
 
