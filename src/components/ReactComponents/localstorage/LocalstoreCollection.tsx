@@ -1,6 +1,5 @@
 import { useStore } from '@nanostores/react'
 import { pokemonCollection } from '../../../store/pokemonCollection'
-import Card from '../../Card.astro'
 
 
 
@@ -8,7 +7,7 @@ import Card from '../../Card.astro'
 export default function LocalstoreCollection() {
   const pokemonsFromStore = useStore(pokemonCollection)
   return (
-    <section className='p-1 w-full h-full grid grid-cols-2 gap-2'>
+    <section className='p-1 w-full h-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2'>
       {pokemonsFromStore.map(el => {
         return (
           <div key={el.id} className="border-2 border-slate-900 drop-shadow-md flex flex-col rounded-lg h-fit p-4 items-center justify-center bg-slate-900/10">
