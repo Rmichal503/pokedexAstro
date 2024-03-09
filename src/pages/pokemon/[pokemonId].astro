@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { Pokemon } from "../../types/pokeApi";
+import AddToLocal from "../../components/ReactComponents/localstorage/AddToLocal"
+import type Pokemon from "../../types/pokeApi";
 import { twMerge } from "tailwind-merge";
 import { clsx } from "clsx";
 import { firstLetterUpperCase } from "../../utils";
@@ -82,7 +83,6 @@ const className = res.types.map((type) => {
         </div>
       </div>
     </div>
-
     <table class="w-11/12 p-3 2xl:p-6">
       <tbody>
         {
@@ -99,5 +99,8 @@ const className = res.types.map((type) => {
         }
       </tbody>
     </table>
+    <div>
+        <AddToLocal client:load item={res}/>
+    </div>
   </div>
 </Layout>

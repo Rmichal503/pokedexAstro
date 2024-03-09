@@ -1,4 +1,4 @@
-export interface Pokemon {
+export default interface Pokemon {
     /** The identifier for this resource */
     id: number;
     /** The name for this resource */
@@ -36,7 +36,7 @@ export interface Pokemon {
     /** A list of details showing types this Pokémon has */
     types: PokemonType[];
   }
-  export interface PokemonAbility {
+  interface PokemonAbility {
     /** Whether or not this is a hidden ability */
     is_hidden: boolean;
     /** The slot this ability occupies in this Pokémon species */
@@ -44,31 +44,31 @@ export interface Pokemon {
     /** The ability the Pokémon may have */
     ability: NamedAPIResource;
   }
-  export interface PokemonType {
+  interface PokemonType {
     /** The order the Pokémon's types are listed in */
     slot: number;
     /** The type the referenced Pokémon has */
     type: NamedAPIResource;
   }
-  export interface PokemonHeldItem {
+  interface PokemonHeldItem {
     /** The item the referenced Pokémon holds */
     item: NamedAPIResource;
     /** The details of the different versions in which the item is held */
     version_details: PokemonHeldItemVersion[];
   }
-  export interface PokemonHeldItemVersion {
+  interface PokemonHeldItemVersion {
     /** The version in which the item is held */
     version: NamedAPIResource;
     /** How often the item is held */
     rarity: number;
   }
-  export interface PokemonMove {
+  interface PokemonMove {
     /** The move the Pokémon can learn */
     move: NamedAPIResource;
     /** The details of the version in which the Pokémon can learn the move */
     version_group_details: PokemonMoveVersion[];
   }
-  export interface PokemonMoveVersion {
+  interface PokemonMoveVersion {
     /** The method by which the move is learned */
     move_learn_method: NamedAPIResource;
     /** The version group in which the move is learned */
@@ -76,7 +76,7 @@ export interface Pokemon {
     /** The minimum level to learn the move */
     level_learned_at: number;
   }
-  export interface PokemonStat {
+  interface PokemonStat {
     /** The stat the Pokémon has */
     stat: NamedAPIResource;
     /** The effort points (EV) the Pokémon has in the stat */
@@ -84,7 +84,7 @@ export interface Pokemon {
     /** The base value of the stat */
     base_stat: number;
   }
-  export interface PokemonSprites {
+  interface PokemonSprites {
     /** The default depiction of this Pokémon from the front in battle */
     front_default: string;
     /** The shiny depiction of this Pokémon from the front in battle */
@@ -102,19 +102,19 @@ export interface Pokemon {
     /** The shiny female depiction of this Pokémon from the back in battle */
     back_shiny_female: string;
   }
-  export interface NamedAPIResource {
+  interface NamedAPIResource {
     /** The name of the referenced resource */
     name: string;
     /** The URL of the referenced resource */
     url: string;
   }
-  export interface VersionGameIndex {
+  interface VersionGameIndex {
     /** The internal id of an API resource within game data */
     game_index: number;
     /** The version relevent to this game index */
     version: NamedAPIResource;
   }
-  export interface Name {
+  interface Name {
     /** The localized name for an API resource in a specific language */
     name: string;
     /** The language this name is in */
