@@ -4,10 +4,10 @@ import SearchComponent from '../components/ReactComponents/SearchComponent';
 ---
 
 <Layout title="Welcome to AstroDex">
-	<main class="h-full w-full flex flex-col justify-center items-center">
-		<a href="/collection">Coll</a>
-		<h1 class="text-4xl md:text-6xl xl:text-7xl 2xl:text-9xl font-bold text-center font-pokemon mb-6 md:mb-10 xl:mb-14">Welcome<br>to<br><span class="text-pokemon-main-red">Pokedex</span></h1>
+	<main class="h-full w-full flex flex-col justify-center items-center gap-4">
+		<h1 class="text-4xl md:text-6xl xl:text-7xl 2xl:text-9xl font-bold text-center font-pokemon mb-6 md:mb-10 xl:mb-14">Welcome<br>to<br><span class="text-pokemon-main-red">AstroDex</span></h1>
 		<SearchComponent client:load transition:name='card'/>
+		<a class='px-2 py-1 md:px-3 md:py-2 xl:px-8 xl:py-5 bg-pokemon-main-red border border-slate-600 rounded-md hover:bg-pokemon-main-red/80 transition-colors duration-200 text-xs md:text-base xl:text-2xl' href="/collection">Your Pokemon collection</a>
 	</main>
 </Layout>
 
